@@ -45,7 +45,7 @@ Route::group(['middleware' => ['auth',]], function () {
 	
 	//link admin
 	Route::group(['prefix' => 'admin','middleware' => ['admin']], function () {
-		Route::get('/', 'AdminHomeController@home');
+		Route::get('/dashboard', 'AdminHomeController@home');
         Route::get('/product', 'AdminHomeController@product');
 		Route::get('/addproduct', 'AdminHomeController@addproduct');
 		Route::post('/saveproduct', 'AdminHomeController@saveproduct');

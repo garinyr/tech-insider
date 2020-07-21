@@ -50,7 +50,7 @@ class AdminHomeController extends Controller
         Auth::attempt(['email' => $email, 'password' => $password]);
         if ( Auth::check() ) {
 			if(Auth::user()->modul_name == 1){
-				return redirect('/admin')->with('flash_message','Login Berhasil');
+				return redirect('/admin/dashboard')->with('flash_message','Login Berhasil');
 			}else{
 				Auth::logout();
 				return redirect('admin/login')->with('flash_message_error','Maaf Anda Bukan Admin');
@@ -385,22 +385,6 @@ class AdminHomeController extends Controller
 		// $dataUser = Usermodel::where('modul_name', '0')->orderBy('created_at', 'desc')->get();
 		$dataUser = Usermodel::all();
 	  	return view('admin.user.index')->with(compact('dataUser'));
-	}
-
-	public function addbank()
-    {
-		return view('admin.user.add');
-	}
-
-	public function savebank(Request $request)
-    {
-		$data = new Bank;
-		$data->no_rek = $request->no_rek;
-		$data->nama_bank = $request->nama_bank;
-		// dd($data);
-		$data->save();
-
-		return redirect('admin/bank')->with('flash_message','Data Berhasil DiTambah');
 	}
 	
 	public function edituser($id)
