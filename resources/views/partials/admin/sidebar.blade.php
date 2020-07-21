@@ -13,7 +13,7 @@
             <nav class="sidebar-nav">
                 <ul id="sidebarnav">
 					<li>
-						<a href="{{url('admin/')}}" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu"> Dashboard</span></a>
+						<a href="{{url('admin/dashboard')}}" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu"> Dashboard</span></a>
 					</li>
 					<li> 
 						<a href="{{url('admin/product')}}" aria-expanded="false"><i class="fa fa-cubes"></i><span class="hide-menu"> Product </span></a> 
